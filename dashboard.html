@@ -10,21 +10,26 @@
 <body>
   <div class="dashboard">
     <aside class="side">
-      <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+      <div class="side-top">
+        <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+        <button class="ctrl side-toggle" type="button" data-side-toggle aria-label="Toggle dashboard menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
 
-      <nav class="side-nav" aria-label="Dashboard sections">
-        <button class="active" type="button" data-dash-tab="overview" aria-current="page">Overview</button>
-        <button type="button" data-dash-tab="transfers">Transfers</button>
-        <button type="button" data-dash-tab="recipients">Recipients</button>
-        <button type="button" data-dash-tab="alerts">Receipts &amp; Alerts</button>
-      </nav>
+      <div class="side-drawer" data-side-drawer>
+        <nav class="side-nav" aria-label="Dashboard sections">
+          <button class="active" type="button" data-dash-tab="overview" aria-current="page">Overview</button>
+          <button type="button" data-dash-tab="transfers">Transfers</button>
+          <button type="button" data-dash-tab="recipients">Recipients</button>
+          <button type="button" data-dash-tab="alerts">Receipts &amp; Alerts</button>
+        </nav>
 
-      <div class="side-foot">
-        <div class="side-controls">
-          <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-          <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        <div class="side-foot">
+          <div class="side-controls">
+            <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+            <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+          </div>
+          <a class="side-logout" href="index.html">Log out</a>
         </div>
-        <a class="side-logout" href="index.html">Log out</a>
       </div>
     </aside>
 

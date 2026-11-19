@@ -365,6 +365,16 @@
   const dashTabs = document.querySelectorAll("[data-dash-tab]");
   const dashPanels = document.querySelectorAll("[data-dash-panel]");
   const dashJumps = document.querySelectorAll("[data-dash-jump]");
+  const sideToggle = document.querySelector("[data-side-toggle]");
+  const sideDrawer = document.querySelector("[data-side-drawer]");
+
+  if (sideToggle && sideDrawer) {
+    sideToggle.addEventListener("click", () => {
+      const open = sideDrawer.classList.toggle("open");
+      sideToggle.innerHTML = open ? closeIcon : burgerIcon;
+      sideToggle.setAttribute("aria-expanded", String(open));
+    });
+  }
 
   function activateDashTab(target) {
     if (!target) return;
@@ -380,6 +390,11 @@
         tab.removeAttribute("aria-current");
       }
     });
+    sideDrawer?.classList.remove("open");
+    if (sideToggle) {
+      sideToggle.innerHTML = burgerIcon;
+      sideToggle.setAttribute("aria-expanded", "false");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -421,4 +436,35 @@
       );
     });
   });
+
+  let backTopFloat = document.querySelector(".back-to-top");
+  if (!backTopFloat && document.body) {
+    backTopFloat = document.createElement("button");
+    backTopFloat.className = "back-to-top";
+    backTopFloat.type = "button";
+    backTopFloat.setAttribute("data-back-to-top", "");
+    backTopFloat.setAttribute("aria-label", "Back to top");
+    backTopFloat.setAttribute("title", "Back to top");
+    backTopFloat.innerHTML =
+      '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>';
+    if (toast && toast.parentNode) {
+      toast.parentNode.insertBefore(backTopFloat, toast);
+    } else {
+      document.body.appendChild(backTopFloat);
+    }
+  }
+
+  document.querySelectorAll("[data-back-to-top]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  function syncBackToTop() {
+    if (!backTopFloat) return;
+    backTopFloat.classList.toggle("show", window.scrollY > 220);
+  }
+
+  window.addEventListener("scroll", syncBackToTop, { passive: true });
+  syncBackToTop();
 })();

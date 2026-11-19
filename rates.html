@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rates | Global Remit</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="send-money.html">Send Money</a>
+        <a class="active" aria-current="page" href="rates.html">Rates</a>
+        <a href="security.html">Security</a>
+        <a href="locations.html">Track &amp; Locate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="tools">
+        <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        <a class="btn alt" href="login.html">Login</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      </div>
+    </div>
+    <nav class="mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="send-money.html">Send Money</a>
+      <a class="active" aria-current="page" href="rates.html">Rates</a>
+      <a href="security.html">Security</a>
+      <a href="locations.html">Track &amp; Locate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Exchange rates</span>
+        <h1>Rates with context.</h1>
+        <p>These are illustrative reference values, not live quotes. Filter corridors below or compare sample conversion benchmarks.</p>
+        <div class="steps" style="margin-top:24px" aria-label="Sample USD to INR conversion benchmarks">
+          <div class="step">
+            <span class="tag">$100 USD</span>
+            <h3 class="mono" style="margin:10px 0 4px">≈ ₹8,350</h3>
+            <p style="margin:0">Sample @ 83.50 (before fee)</p>
+          </div>
+          <div class="step">
+            <span class="tag">$500 USD</span>
+            <h3 class="mono" style="margin:10px 0 4px">≈ ₹41,750</h3>
+            <p style="margin:0">Sample @ 83.50 (before fee)</p>
+          </div>
+          <div class="step">
+            <span class="tag">$1,000 USD</span>
+            <h3 class="mono" style="margin:10px 0 4px">≈ ₹83,500</h3>
+            <p style="margin:0">Sample @ 83.50 (before fee)</p>
+          </div>
+          <div class="step">
+            <span class="tag">$5,000 USD</span>
+            <h3 class="mono" style="margin:10px 0 4px">≈ ₹417,500</h3>
+            <p style="margin:0">Sample @ 83.50 (before fee)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow">FX corridor board</span>
+        <h2>Filter sample rates by region.</h2>
+        <div class="chips" role="group" aria-label="Filter rates by region">
+          <button class="chip active" type="button" data-region-filter="all" aria-pressed="true">All Regions</button>
+          <button class="chip" type="button" data-region-filter="asia" aria-pressed="false">Asia</button>
+          <button class="chip" type="button" data-region-filter="europe" aria-pressed="false">Europe</button>
+          <button class="chip" type="button" data-region-filter="americas-africa" aria-pressed="false">Americas &amp; Africa</button>
+        </div>
+        <div class="panel table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Pair</th>
+                <th>Sample rate</th>
+                <th>24h Trend</th>
+                <th>Sample fee</th>
+                <th>Delivery speed</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-region="asia">
+                <td class="mono">USD / INR</td>
+                <td class="mono">83.50</td>
+                <td><span class="badge up">+0.14%</span></td>
+                <td class="mono">$5.00</td>
+                <td>Minutes (Bank / UPI)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="europe">
+                <td class="mono">EUR / INR</td>
+                <td class="mono">90.00</td>
+                <td><span class="badge up">+0.08%</span></td>
+                <td class="mono">€4.50</td>
+                <td>Same day (SEPA)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="europe">
+                <td class="mono">GBP / INR</td>
+                <td class="mono">105.00</td>
+                <td><span class="badge down">-0.11%</span></td>
+                <td class="mono">£3.90</td>
+                <td>Minutes (FPS)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="asia">
+                <td class="mono">USD / PHP</td>
+                <td class="mono">56.40</td>
+                <td><span class="badge up">+0.22%</span></td>
+                <td class="mono">$3.50</td>
+                <td>Instant (Wallet)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="asia">
+                <td class="mono">AUD / VND</td>
+                <td class="mono">16,450</td>
+                <td><span class="badge up">+0.05%</span></td>
+                <td class="mono">A$6.00</td>
+                <td>Same day (Bank)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="americas-africa">
+                <td class="mono">USD / MXN</td>
+                <td class="mono">17.20</td>
+                <td><span class="badge down">-0.18%</span></td>
+                <td class="mono">$4.00</td>
+                <td>Minutes (SPEI)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="americas-africa">
+                <td class="mono">GBP / NGN</td>
+                <td class="mono">1,920</td>
+                <td><span class="badge up">+0.31%</span></td>
+                <td class="mono">£4.00</td>
+                <td>Same day (Bank)</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+              <tr data-region="americas-africa">
+                <td class="mono">EUR / MAD</td>
+                <td class="mono">10.85</td>
+                <td><span class="badge down">-0.04%</span></td>
+                <td class="mono">€5.00</td>
+                <td>Cash / Bank</td>
+                <td><a class="btn alt" style="padding:6px 12px" href="send-money.html">Estimate</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-bottom:0">Replace sample data with verified FX feed timestamps and licensed provider terms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <span class="eyebrow">Rate breakdown</span>
+        <h2>How mid-market rates differ from hidden spreads.</h2>
+        <div class="grid" style="margin-top:22px">
+          <div class="bento">
+            <span class="tag" style="width:fit-content">01 · Reference</span>
+            <h3>Mid-Market Benchmark</h3>
+            <p>The midpoint between global buy and sell currency prices before any provider markup is applied.</p>
+          </div>
+          <div class="bento">
+            <span class="tag" style="width:fit-content">02 · Transparency</span>
+            <h3>Upfront Fee Visibility</h3>
+            <p>Instead of hiding costs inside a wider FX margin, clear transfers itemize the fee separately.</p>
+          </div>
+          <div class="bento">
+            <span class="tag" style="width:fit-content">03 · Comparison</span>
+            <h3>Compare Net Payout</h3>
+            <p>Always judge a quote by the final amount arriving in the recipient’s local currency, not just "zero fee" claims.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split" style="align-items:start">
+        <form class="panel" data-demo data-msg="Demo rate watch alert saved.">
+          <span class="eyebrow">Rate watch</span>
+          <h2>Set a target rate alert.</h2>
+          <div class="field">
+            <label for="alert-pair">Currency corridor</label>
+            <select id="alert-pair">
+              <option>USD / INR</option>
+              <option>EUR / INR</option>
+              <option>GBP / INR</option>
+              <option>USD / PHP</option>
+              <option>USD / MXN</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="alert-target">Target rate</label>
+            <input id="alert-target" type="number" step="0.01" value="84.00" required>
+          </div>
+          <div class="field">
+            <label for="alert-email">Email for alert</label>
+            <input id="alert-email" type="email" placeholder="you@example.com" required>
+          </div>
+          <button class="btn" type="submit">Create rate alert</button>
+        </form>
+
+        <div>
+          <span class="eyebrow">Smart timing</span>
+          <h2>Practical FX tips before sending.</h2>
+          <div class="faq" style="margin-top:16px">
+            <details open>
+              <summary>Check weekday market hours</summary>
+              <p>Global currency markets close over weekends, so some providers widen rate buffers on Saturdays and Sundays.</p>
+            </details>
+            <details>
+              <summary>Bundle smaller transfers when fees are flat</summary>
+              <p>If a corridor charges a fixed transfer fee, sending fewer larger transfers can reduce total fee percentage.</p>
+            </details>
+            <details>
+              <summary>Verify rate-lock expiry times</summary>
+              <p>Confirm whether your quoted rate locks immediately on submission or only once bank funding settles.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footgrid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+        <p>Transparent international-transfer information and helpful tools.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <p>
+          <a href="send-money.html">Send Money</a><br>
+          <a href="rates.html">Rates</a><br>
+          <a href="security.html">Security</a>
+        </p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>
+          <a href="locations.html#track">Track</a><br>
+          <a href="locations.html#locations">Locations</a><br>
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+      <div>
+        <h3>Updates</h3>
+        <form data-demo data-msg="Demo newsletter form validated.">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="wrap copy">© 2026 GLOBAL REMIT · Demo website. Verify service, rates, fees and compliance details.</div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Send Money | Global Remit</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a class="active" aria-current="page" href="send-money.html">Send Money</a>
+        <a href="rates.html">Rates</a>
+        <a href="security.html">Security</a>
+        <a href="locations.html">Track &amp; Locate</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="tools">
+        <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        <a class="btn alt" href="login.html">Login</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      </div>
+    </div>
+    <nav class="mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a class="active" aria-current="page" href="send-money.html">Send Money</a>
+      <a href="rates.html">Rates</a>
+      <a href="security.html">Security</a>
+      <a href="locations.html">Track &amp; Locate</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">Send money</span>
+          <h1>Make transfer details clear.</h1>
+          <p>Illustrative calculator only; this website does not process or transmit funds. Test corridor rates, fees, and payout options below.</p>
+          <div class="stats">
+            <div class="stat">
+              <b>5+</b>
+              <span>Preset corridors</span>
+            </div>
+            <div class="stat">
+              <b>3 Rails</b>
+              <span>Bank, wallet, cash</span>
+            </div>
+            <div class="stat">
+              <b>Live Math</b>
+              <span>Instant estimate</span>
+            </div>
+          </div>
+        </div>
+        <img class="visual" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=85" alt="Transfer amount and fee preview">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split" style="align-items:start">
+        <form class="panel" data-calc>
+          <h2>Transfer estimate</h2>
+          <div class="field">
+            <label for="calc-corridor">Destination corridor</label>
+            <select id="calc-corridor" name="corridor">
+              <option value="USD-INR">USD → INR (India)</option>
+              <option value="USD-PHP">USD → PHP (Philippines)</option>
+              <option value="GBP-INR">GBP → INR (India)</option>
+              <option value="EUR-MAD">EUR → MAD (Morocco)</option>
+              <option value="AUD-VND">AUD → VND (Vietnam)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-method">Delivery method</label>
+            <select id="calc-method" name="method">
+              <option value="bank">Bank Deposit (Standard)</option>
+              <option value="wallet">Mobile Wallet (Instant)</option>
+              <option value="cash">Cash Pickup (Agent Branch)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calc-amount">Amount to send</label>
+            <input id="calc-amount" name="amount" type="number" min="1" value="500" required>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="calc-fee">Illustrative fee</label>
+              <input id="calc-fee" name="fee" type="number" min="0" step="0.5" value="5" required>
+            </div>
+            <div class="field">
+              <label for="calc-rate">Illustrative rate</label>
+              <input id="calc-rate" name="rate" type="number" min=".01" step=".01" value="83.5" required>
+            </div>
+          </div>
+          <div class="calc">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap">
+              <span>Recipient amount estimate</span>
+              <strong><span data-receive>0</span> <span data-currency>INR</span></strong>
+            </div>
+            <p style="margin:8px 0 4px">Sending: <span class="mono" data-send>500.00</span> · Fee: <span class="mono" data-fee>5.00</span></p>
+            <p style="margin:0">Estimated arrival: <strong style="font-size:15px;font-family:inherit" data-eta>Within minutes (bank rail)</strong></p>
+          </div>
+          <small style="display:block;margin-top:10px;color:var(--muted)">Not a live quote. Values are user-entered or sample demo presets.</small>
+        </form>
+
+        <div class="panel">
+          <span class="eyebrow">Checklist</span>
+          <h2>Before confirmation</h2>
+          <p>Review every element of a quote with your licensed provider before authorizing payment.</p>
+          <ul class="list">
+            <li><strong>Total sending amount:</strong> Confirm base currency debit and any card surcharge.</li>
+            <li><strong>Exchange rate &amp; fee:</strong> Verify the exact rate and whether the fee is deducted or added.</li>
+            <li><strong>Recipient payout:</strong> Check net amount arriving in destination currency.</li>
+            <li><strong>Delivery estimate:</strong> Confirm local bank holiday or cutoff windows.</li>
+            <li><strong>Rate lock expiry:</strong> Know how long your quoted rate remains valid prior to funding.</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="rates.html">Compare all sample rates</a>
+            <a class="btn alt" href="locations.html#track">Track an existing transfer</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow">Funding options</span>
+        <h2>How you can fund a transfer.</h2>
+        <div class="compare-rows">
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Bank Transfer (ACH / EFT)</h3>
+              <small style="color:var(--muted)">1–2 business days clearing</small>
+            </div>
+            <p style="margin:0">Connect a checking account for economical transfers with higher daily sending limits.</p>
+            <span class="badge up">Lowest fee</span>
+          </div>
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Debit &amp; Credit Cards</h3>
+              <small style="color:var(--muted)">Immediate authorization</small>
+            </div>
+            <p style="margin:0">Fund transfers in seconds using Visa or Mastercard when urgent payout speed is top priority.</p>
+            <span class="badge info">Fastest checkout</span>
+          </div>
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Domestic Wire</h3>
+              <small style="color:var(--muted)">Same-day bank cutoff</small>
+            </div>
+            <p style="margin:0">Suitable for tuition deposits, property payments, and larger verified invoice amounts.</p>
+            <span class="badge down">High value</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow">Destination requirements</span>
+        <h2>Recipient details needed by region.</h2>
+        <div class="steps">
+          <div class="panel">
+            <h3>India</h3>
+            <p>Recipient full name, bank account number, and 11-character IFSC code (or verified UPI ID).</p>
+          </div>
+          <div class="panel">
+            <h3>Europe &amp; UK</h3>
+            <p>Full legal name, IBAN for SEPA destinations, or 6-digit Sort Code and Account Number for UK.</p>
+          </div>
+          <div class="panel">
+            <h3>Philippines &amp; SEA</h3>
+            <p>Bank account details, mobile wallet phone number, or matching government ID name for cash pickup.</p>
+          </div>
+          <div class="panel">
+            <h3>Americas</h3>
+            <p>18-digit CLABE for Mexico SPEI bank deposits, or ACH routing and account numbers in North America.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split" style="align-items:start">
+        <div class="panel">
+          <span class="eyebrow">Verification tiers</span>
+          <h2>Typical transfer limits overview.</h2>
+          <p>Actual transaction thresholds depend on local regulations and identity verification status.</p>
+          <ul class="list">
+            <li><strong>Standard Verified:</strong> Everyday family support with basic government ID verification.</li>
+            <li><strong>Enhanced Verified:</strong> Higher limits unlocked with proof of address and source of funds.</li>
+            <li><strong>Business Treasury:</strong> Custom monthly thresholds following corporate KYB review.</li>
+          </ul>
+        </div>
+        <div class="faq">
+          <details open>
+            <summary>How long is an exchange rate typically held?</summary>
+            <p>Most providers hold a quoted rate for a fixed window (for example 15 minutes to 24 hours) until your payment clears.</p>
+          </details>
+          <details>
+            <summary>What happens if a recipient name does not match their bank account?</summary>
+            <p>Mismatched names or invalid routing codes can delay settlement or trigger an automatic return minus intermediary fees.</p>
+          </details>
+          <details>
+            <summary>Can I edit or cancel a transfer after sending?</summary>
+            <p>Amendments or cancellations are typically only possible before payout settlement completes with the partner rail.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footgrid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+        <p>Transparent international-transfer information and helpful tools.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <p>
+          <a href="send-money.html">Send Money</a><br>
+          <a href="rates.html">Rates</a><br>
+          <a href="security.html">Security</a>
+        </p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>
+          <a href="locations.html#track">Track</a><br>
+          <a href="locations.html#locations">Locations</a><br>
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+      <div>
+        <h3>Updates</h3>
+        <form data-demo data-msg="Demo newsletter form validated.">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="wrap copy">© 2026 GLOBAL REMIT · Demo website. Verify service, rates, fees and compliance details.</div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

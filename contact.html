@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Global Remit</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap nav">
+      <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+      <nav class="links" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="send-money.html">Send Money</a>
+        <a href="rates.html">Rates</a>
+        <a href="security.html">Security</a>
+        <a href="locations.html">Track &amp; Locate</a>
+        <a class="active" aria-current="page" href="contact.html">Contact</a>
+      </nav>
+      <div class="tools">
+        <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        <a class="btn alt" href="login.html">Login</a>
+        <a class="btn" href="dashboard.html">Dashboard</a>
+        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+      </div>
+    </div>
+    <nav class="mobile" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="send-money.html">Send Money</a>
+      <a href="rates.html">Rates</a>
+      <a href="security.html">Security</a>
+      <a href="locations.html">Track &amp; Locate</a>
+      <a class="active" aria-current="page" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Contact</span>
+        <h1>Support built around every transfer.</h1>
+        <p>Choose the right support desk or send an enquiry directly. Replace sample contact channels with verified phone and email details before launch.</p>
+        <div class="grid" style="margin-top:24px">
+          <div class="panel">
+            <span class="badge up">24/7 Queue</span>
+            <h3>Customer Transfer Help</h3>
+            <p>Assistance with tracking milestones, recipient corrections, and cancellation questions.</p>
+          </div>
+          <div class="panel">
+            <span class="badge info">Mon–Fri</span>
+            <h3>Business &amp; Treasury Desk</h3>
+            <p>Corporate onboarding, batch CSV payouts, and multi-currency supplier settlements.</p>
+          </div>
+          <div class="panel">
+            <span class="badge down">Priority</span>
+            <h3>Security &amp; Compliance</h3>
+            <p>Document verification queries and urgent reports of suspected fraud or phishing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split" style="align-items:start">
+        <form class="panel" data-demo data-msg="Demo enquiry validated.">
+          <h2>Contact support</h2>
+          <div class="field">
+            <label for="contact-dept">Department / Topic</label>
+            <select id="contact-dept">
+              <option>Transfer status &amp; amendments</option>
+              <option>Identity &amp; KYC verification</option>
+              <option>Business &amp; corporate accounts</option>
+              <option>Report suspicious activity</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="contact-ref">Transfer Reference (optional)</label>
+            <input id="contact-ref" placeholder="e.g. GR-1042">
+          </div>
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" required>
+          </div>
+          <div class="field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="contact-msg">Message</label>
+            <textarea id="contact-msg" placeholder="Describe how we can help..." required></textarea>
+          </div>
+          <button class="btn" type="submit">Submit enquiry</button>
+        </form>
+
+        <div class="panel">
+          <h2>Office map &amp; operating hours</h2>
+          <div class="map">
+            <iframe title="London Canary Wharf office map placeholder" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.05%2C51.49%2C0.01%2C51.52&layer=mapnik"></iframe>
+          </div>
+          <p>Sample London office map preview only, not a verified branch location.</p>
+          <div style="display:grid;gap:8px;margin-top:14px">
+            <div class="bento-row">
+              <span>Transfer Support Desk</span>
+              <strong class="mono">24/7 Live</strong>
+            </div>
+            <div class="bento-row">
+              <span>Business Onboarding</span>
+              <strong class="mono">Mon–Fri · 09:00–18:00</strong>
+            </div>
+            <div class="bento-row">
+              <span>Compliance Escalations</span>
+              <strong class="mono">Priority Review</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split" style="align-items:start">
+        <div>
+          <span class="eyebrow">Quick answers</span>
+          <h2>Common support questions.</h2>
+          <div class="faq" style="margin-top:16px">
+            <details open>
+              <summary>How do I amend or cancel a transfer?</summary>
+              <p>Contact support immediately with your reference number. Edits or cancellations are generally only possible before the receiving partner completes payout.</p>
+            </details>
+            <details>
+              <summary>Why was additional ID verification requested?</summary>
+              <p>Regulated remittance providers periodically verify identity documents or source-of-funds statements to comply with regional KYC and AML laws.</p>
+            </details>
+            <details>
+              <summary>How long do cancelled transfer refunds take?</summary>
+              <p>Refund timing depends on your original funding rail, typically returning to bank accounts or cards within 2–5 business days after cancellation confirmation.</p>
+            </details>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="eyebrow">Self-service shortcuts</span>
+          <h3>Resolve common tasks faster.</h3>
+          <p>Check status updates or review security resources without waiting for an agent reply.</p>
+          <div class="actions" style="flex-direction:column;align-items:stretch">
+            <a class="btn" href="locations.html#track">Track an existing transfer</a>
+            <a class="btn alt" href="security.html">Review scam &amp; fraud guides</a>
+            <a class="btn alt" href="send-money.html">Recalculate fees &amp; rates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footgrid">
+      <div>
+        <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+        <p>Transparent international-transfer information and helpful tools.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <p>
+          <a href="send-money.html">Send Money</a><br>
+          <a href="rates.html">Rates</a><br>
+          <a href="security.html">Security</a>
+        </p>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <p>
+          <a href="locations.html#track">Track</a><br>
+          <a href="locations.html#locations">Locations</a><br>
+          <a href="contact.html">Contact</a>
+        </p>
+      </div>
+      <div>
+        <h3>Updates</h3>
+        <form data-demo data-msg="Demo newsletter form validated.">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="wrap copy">© 2026 GLOBAL REMIT · Demo website. Verify service, rates, fees and compliance details.</div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in | Global Remit</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="auth-topbar">
+    <a class="auth-back" href="index.html"><span aria-hidden="true">←</span> Back to Home</a>
+    <div class="tools">
+      <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+    </div>
+  </header>
+
+  <main class="auth">
+    <section class="authbox">
+      <div class="auth-head">
+        <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+        <h1>Sign in</h1>
+        <p>Access transfer information and your account.</p>
+      </div>
+
+      <form data-demo data-msg="Demo form only. Secure authentication integration required.">
+        <div class="field">
+          <label for="login-email">Email</label>
+          <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="login-password">Password</label>
+          <input id="login-password" name="password" type="password" minlength="8" autocomplete="current-password" placeholder="••••••••" required>
+        </div>
+        <div class="auth-row">
+          <label class="auth-check">
+            <input type="checkbox" name="remember">
+            <span>Remember password</span>
+          </label>
+          <a class="auth-link" href="#" data-forgot>Forgot password?</a>
+        </div>
+        <button class="btn" type="submit" style="width:100%">Sign in</button>
+      </form>
+
+      <div class="auth-divider">or continue with</div>
+      <div class="social-grid">
+        <button class="social-btn" type="button" data-social="Google">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A11.9 11.9 0 0 0 12 0 12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>
+          Google
+        </button>
+        <button class="social-btn" type="button" data-social="Apple">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 12.7c0-2.06 1.68-3.05 1.76-3.1-.96-1.4-2.45-1.6-2.98-1.62-1.26-.13-2.47.75-3.11.75-.64 0-1.64-.73-2.7-.71-1.39.02-2.67.81-3.39 2.06-1.45 2.51-.37 6.22 1.04 8.26.69 1 1.51 2.12 2.59 2.08 1.04-.04 1.44-.67 2.7-.67 1.26 0 1.62.67 2.71.65 1.12-.02 1.83-1.01 2.51-2.01.79-1.16 1.12-2.29 1.14-2.35-.03-.01-2.27-.87-2.27-3.34zM14.3 6.66c.57-.7.96-1.66.85-2.63-.83.03-1.83.55-2.42 1.24-.53.61-.99 1.59-.87 2.53.92.07 1.87-.46 2.44-1.14z"/></svg>
+          Apple
+        </button>
+      </div>
+
+      <p class="auth-foot">New to Global Remit? <a class="auth-link" href="signup.html">Create an account</a></p>
+    </section>
+  </main>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

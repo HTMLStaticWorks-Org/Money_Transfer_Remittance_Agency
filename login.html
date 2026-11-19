@@ -9,7 +9,6 @@
 </head>
 <body>
   <header class="auth-topbar">
-    <a class="auth-back" href="index.html"><span aria-hidden="true">←</span> Back to Home</a>
     <div class="tools">
       <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
       <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
@@ -31,7 +30,12 @@
         </div>
         <div class="field">
           <label for="login-password">Password</label>
-          <input id="login-password" name="password" type="password" minlength="8" autocomplete="current-password" placeholder="••••••••" required>
+          <div class="pass-wrap">
+            <input id="login-password" name="password" type="password" minlength="8" autocomplete="current-password" placeholder="••••••••" required>
+            <button class="pass-toggle" type="button" data-pass-toggle aria-label="Show password" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
         </div>
         <div class="auth-row">
           <label class="auth-check">

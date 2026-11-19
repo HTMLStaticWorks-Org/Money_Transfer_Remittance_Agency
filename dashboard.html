@@ -1,1 +1,531 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard | Global Remit</title><link rel="icon" type="image/svg+xml" href="logo.svg"><link rel="stylesheet" href="styles.css"></head><body><div class="dashboard"><aside class="side"><a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a><nav><a href="#">Dashboard</a><a href="send-money.html">Send Money</a><a href="track.html">Tracker</a><a href="#beneficiaries">Beneficiaries</a><a href="rates.html">Rate Watch</a><a href="#receipts">Receipts</a><a href="security.html">Security</a><a href="login.html">Log out</a></nav></aside><main class="main"><div style="display:flex;justify-content:space-between;flex-wrap:wrap"><div><span class="eyebrow">Customer dashboard</span><h1 style="font-size:34px">Your transfer overview</h1><p>Demo interface — no account data connected.</p></div><div><button class="ctrl" data-theme>Dark</button> <button class="ctrl" data-dir>LTR</button></div></div><div class="grid"><div class="metric"><span>Transfers</span><strong>02</strong><p>Sample</p></div><div class="metric"><span>Recipients</span><strong>03</strong><p>Sample</p></div><div class="metric"><span>Rate alerts</span><strong>01</strong><p>Sample</p></div></div><section class="section"><h2>Recent transfers</h2><div class="panel"><table class="table"><tr><th>Reference</th><th>Destination</th><th>Status</th></tr><tr><td>GR-1042</td><td>India</td><td><span class="tag">Processing</span></td></tr><tr><td>GR-1041</td><td>Philippines</td><td><span class="tag">Delivered</span></td></tr></table><p>Mock data, replace with secure authenticated records.</p></div></section><div class="grid"><div class="panel" id="beneficiaries"><h3>Beneficiaries</h3><p>Saved recipients (demo)</p></div><div class="panel"><h3>Rate watch</h3><p>Requires live rates integration</p></div><div class="panel" id="receipts"><h3>Receipts</h3><p>Requires real transaction records</p></div></div></main></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Global Remit</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="dashboard">
+    <aside class="side">
+      <a class="brand" href="index.html"><svg class="brand-logo" viewBox="0 0 100 100" aria-hidden="true"><g class="logo-globe"><path d="M 20 34 A 35 35 0 0 1 84 34"/><path d="M 52 13 V 46"/><path d="M 52 13 C 35 21 31 34 31 46"/><path d="M 52 13 C 69 21 73 30 73 34"/><path d="M 25 27 Q 52 35 79 27"/><path d="M 25 70 A 35 35 0 0 0 85 60"/><path d="M 52 71 V 83"/><path d="M 35 72 C 38 78 44 82 52 83"/><path d="M 70 66 C 67 75 61 80 52 83"/><path d="M 28 73 Q 52 69 78 69"/></g><path class="logo-arrow" d="M 17 34 C 3 45 3 64 25 67 C 46 70 63 60 73 53 L 76 64 L 96 42 L 66 36 L 70 45 C 58 51 42 56 26 54 C 11 52 10 43 17 34 Z"/></svg>GLOBAL REMIT</a>
+
+      <nav class="side-nav" aria-label="Dashboard sections">
+        <button class="active" type="button" data-dash-tab="overview" aria-current="page">Overview</button>
+        <button type="button" data-dash-tab="transfers">Transfers</button>
+        <button type="button" data-dash-tab="recipients">Recipients</button>
+        <button type="button" data-dash-tab="alerts">Receipts &amp; Alerts</button>
+      </nav>
+
+      <div class="side-foot">
+        <div class="side-controls">
+          <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        </div>
+        <a class="side-logout" href="index.html">Log out</a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- PANEL 1: OVERVIEW (3 Sections) -->
+      <div class="dash-panel" data-dash-panel="overview">
+        <div class="dash-head">
+          <span class="eyebrow">Customer dashboard</span>
+          <h1>Your transfer overview</h1>
+          <p>Demo workspace — switch views using the sidebar without leaving the dashboard.</p>
+        </div>
+
+        <section class="dash-section" aria-label="Account summary metrics">
+          <div class="grid">
+            <div class="metric">
+              <span>Total Transfers</span>
+              <strong>14</strong>
+              <p style="margin:6px 0 0">Sample completed &amp; active</p>
+            </div>
+            <div class="metric">
+              <span>Saved Recipients</span>
+              <strong>05</strong>
+              <p style="margin:6px 0 0">Verified bank &amp; wallet contacts</p>
+            </div>
+            <div class="metric">
+              <span>Active Rate Alerts</span>
+              <strong>03</strong>
+              <p style="margin:6px 0 0">Monitoring target corridors</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <h2>Recent transfers</h2>
+          <div class="panel table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Reference</th>
+                  <th>Corridor</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">GR-1042</td>
+                  <td>USD → INR</td>
+                  <td class="mono">$500.00</td>
+                  <td><span class="badge info">Processing</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">GR-1041</td>
+                  <td>GBP → PHP</td>
+                  <td class="mono">£350.00</td>
+                  <td><span class="badge up">Delivered</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">GR-1039</td>
+                  <td>EUR → MAD</td>
+                  <td class="mono">€420.00</td>
+                  <td><span class="badge down">Sent</span></td>
+                </tr>
+                <tr>
+                  <td class="mono">GR-1036</td>
+                  <td>USD → INR</td>
+                  <td class="mono">$1,200.00</td>
+                  <td><span class="badge up">Delivered</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="margin-bottom:0">Mock data — replace with authenticated backend records in production.</p>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <div class="split">
+            <div class="panel">
+              <span class="eyebrow">Quick workspace actions</span>
+              <h3>Jump to a dashboard tool</h3>
+              <p>Open transfer estimation, manage saved beneficiaries, or inspect receipts directly inside this workspace.</p>
+              <div class="actions">
+                <button class="btn" type="button" data-dash-jump="transfers">New transfer estimate</button>
+                <button class="btn alt" type="button" data-dash-jump="recipients">Manage recipients</button>
+                <button class="btn alt" type="button" data-dash-jump="alerts">Receipts &amp; alerts</button>
+              </div>
+            </div>
+            <div class="bento">
+              <span class="eyebrow">Monthly corridor snapshot</span>
+              <div class="bento-row">
+                <span>Most used corridor</span>
+                <strong class="mono">USD → INR</strong>
+              </div>
+              <div class="bento-row">
+                <span>Preferred payout rail</span>
+                <strong class="mono">Bank Deposit</strong>
+              </div>
+              <div class="bento-row">
+                <span>Verification tier</span>
+                <strong class="mono" style="color:var(--teal)">Enhanced (Demo)</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PANEL 2: TRANSFERS (3 Sections) -->
+      <div class="dash-panel" data-dash-panel="transfers" hidden>
+        <div class="dash-head">
+          <span class="eyebrow">Transfers workspace</span>
+          <h1>Estimate, filter &amp; follow transfers</h1>
+          <p>Run illustrative quotes, filter recent transactions, and inspect milestone stages.</p>
+        </div>
+
+        <section class="dash-section">
+          <div class="split">
+            <form class="panel" data-calc data-demo data-msg="Demo transfer estimate queued (no funds moved).">
+              <h2>Quick transfer estimator</h2>
+              <div class="field">
+                <label for="dash-corridor">Destination corridor</label>
+                <select id="dash-corridor" name="corridor">
+                  <option value="USD-INR">USD → INR (India)</option>
+                  <option value="USD-PHP">USD → PHP (Philippines)</option>
+                  <option value="GBP-INR">GBP → INR (India)</option>
+                  <option value="EUR-MAD">EUR → MAD (Morocco)</option>
+                  <option value="AUD-VND">AUD → VND (Vietnam)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="dash-method">Delivery method</label>
+                <select id="dash-method" name="method">
+                  <option value="bank">Bank Deposit</option>
+                  <option value="wallet">Mobile Wallet</option>
+                  <option value="cash">Cash Pickup</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="dash-amount">Amount to send</label>
+                <input id="dash-amount" name="amount" type="number" min="1" value="500" required>
+              </div>
+              <div class="grid-2">
+                <div class="field">
+                  <label for="dash-fee">Illustrative fee</label>
+                  <input id="dash-fee" name="fee" type="number" min="0" step="0.5" value="5" required>
+                </div>
+                <div class="field">
+                  <label for="dash-rate">Illustrative rate</label>
+                  <input id="dash-rate" name="rate" type="number" min=".01" step=".01" value="83.5" required>
+                </div>
+              </div>
+              <div class="calc">
+                <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap">
+                  <span>Estimated payout</span>
+                  <strong><span data-receive>0</span> <span data-currency>INR</span></strong>
+                </div>
+                <p style="margin:6px 0 0">Sending: <span class="mono" data-send>500.00</span> · Fee: <span class="mono" data-fee>5.00</span> · <span data-eta>Within minutes</span></p>
+              </div>
+              <button class="btn" type="submit" style="margin-top:14px;width:100%">Simulate transfer review</button>
+            </form>
+
+            <div class="dash-stack">
+              <div class="panel">
+                <span class="eyebrow">Pre-send checks</span>
+                <h3>Transfer readiness summary</h3>
+                <ul class="list">
+                  <li><strong>Rate lock:</strong> Sample quotes display illustrative rates only.</li>
+                  <li><strong>Recipient rail:</strong> Bank and mobile wallets require exact beneficiary match.</li>
+                  <li><strong>Funding source:</strong> Bank ACH offers lower fees; cards prioritize speed.</li>
+                  <li><strong>Compliance status:</strong> Standard KYC tier active for demo session.</li>
+                </ul>
+              </div>
+
+              <div class="bento">
+                <span class="eyebrow">Funding &amp; settlement snapshot</span>
+                <div class="bento-row">
+                  <span>Bank Transfer (ACH)</span>
+                  <strong class="mono">Lowest fee</strong>
+                </div>
+                <div class="bento-row">
+                  <span>Debit Card</span>
+                  <strong class="mono">Instant checkout</strong>
+                </div>
+                <div class="bento-row">
+                  <span>Mobile Wallet</span>
+                  <strong class="mono">Minutes</strong>
+                </div>
+                <div class="bento-row">
+                  <span>Daily Demo Limit</span>
+                  <strong class="mono" style="color:var(--teal)">$10,000</strong>
+                </div>
+                <button class="btn alt" type="button" data-dash-jump="recipients" style="width:100%">Select saved recipient</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <h2>Filterable transfer history</h2>
+          <div class="chips" role="group" aria-label="Filter transfers by status">
+            <button class="chip active" type="button" data-dash-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-dash-filter="processing" aria-pressed="false">Processing</button>
+            <button class="chip" type="button" data-dash-filter="sent" aria-pressed="false">Sent</button>
+            <button class="chip" type="button" data-dash-filter="delivered" aria-pressed="false">Delivered</button>
+          </div>
+          <div class="panel table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Reference</th>
+                  <th>Recipient</th>
+                  <th>Corridor</th>
+                  <th>Sent</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-status="processing">
+                  <td class="mono">GR-1042</td>
+                  <td>Aarav Sharma</td>
+                  <td>USD → INR</td>
+                  <td class="mono">$500.00</td>
+                  <td><span class="badge info">Processing</span></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="mono">GR-1041</td>
+                  <td>Maria Santos</td>
+                  <td>GBP → PHP</td>
+                  <td class="mono">£350.00</td>
+                  <td><span class="badge up">Delivered</span></td>
+                </tr>
+                <tr data-status="sent">
+                  <td class="mono">GR-1039</td>
+                  <td>Youssef El Amrani</td>
+                  <td>EUR → MAD</td>
+                  <td class="mono">€420.00</td>
+                  <td><span class="badge down">Sent</span></td>
+                </tr>
+                <tr data-status="delivered">
+                  <td class="mono">GR-1036</td>
+                  <td>Priya Nair</td>
+                  <td>USD → INR</td>
+                  <td class="mono">$1,200.00</td>
+                  <td><span class="badge up">Delivered</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <h2>Active milestone tracker — <span class="mono">GR-1042</span></h2>
+          <div class="steps">
+            <div class="step">
+              <span class="tag">01</span>
+              <h3>Payment received</h3>
+              <p>Authorized from demo funding account.</p>
+            </div>
+            <div class="step current">
+              <span class="tag">02</span>
+              <h3>Processing</h3>
+              <p>Compliance &amp; partner rail verification active.</p>
+            </div>
+            <div class="step">
+              <span class="tag">03</span>
+              <h3>Sent</h3>
+              <p>Pending dispatch to destination bank.</p>
+            </div>
+            <div class="step">
+              <span class="tag">04</span>
+              <h3>Delivered</h3>
+              <p>Awaiting final recipient confirmation.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PANEL 3: RECIPIENTS (3 Sections) -->
+      <div class="dash-panel" data-dash-panel="recipients" hidden>
+        <div class="dash-head">
+          <span class="eyebrow">Beneficiaries directory</span>
+          <h1>Manage saved recipients</h1>
+          <p>View saved payout profiles or add a new recipient for faster future transfers.</p>
+        </div>
+
+        <section class="dash-section">
+          <h2>Saved beneficiaries (demo)</h2>
+          <div class="grid-2">
+            <div class="panel">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+                <h3 style="margin:0">Aarav Sharma</h3>
+                <span class="tag">India · Bank / IFSC</span>
+              </div>
+              <p class="mono" style="margin:8px 0 12px">HDFC ****4821 · IFSC HDFC0000123</p>
+              <button class="btn alt" type="button" data-dash-jump="transfers">Send to Aarav</button>
+            </div>
+            <div class="panel">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+                <h3 style="margin:0">Maria Santos</h3>
+                <span class="tag">Philippines · Mobile Wallet</span>
+              </div>
+              <p class="mono" style="margin:8px 0 12px">GCash ****9044 · Instant credit</p>
+              <button class="btn alt" type="button" data-dash-jump="transfers">Send to Maria</button>
+            </div>
+            <div class="panel">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+                <h3 style="margin:0">Youssef El Amrani</h3>
+                <span class="tag">Morocco · Cash Pickup</span>
+              </div>
+              <p class="mono" style="margin:8px 0 12px">Casablanca Hub · Government ID required</p>
+              <button class="btn alt" type="button" data-dash-jump="transfers">Send to Youssef</button>
+            </div>
+            <div class="panel">
+              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+                <h3 style="margin:0">Priya Nair</h3>
+                <span class="tag">India · UPI / Bank</span>
+              </div>
+              <p class="mono" style="margin:8px 0 12px">ICICI ****1190 · IFSC ICIC0000412</p>
+              <button class="btn alt" type="button" data-dash-jump="transfers">Send to Priya</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <form class="panel" data-demo data-msg="Demo recipient validated (database required to persist).">
+            <h2>Add new recipient</h2>
+            <div class="grid-2">
+              <div class="field">
+                <label for="rec-name">Legal full name</label>
+                <input id="rec-name" placeholder="As shown on bank account or ID" required>
+              </div>
+              <div class="field">
+                <label for="rec-country">Destination country</label>
+                <select id="rec-country">
+                  <option>India (INR)</option>
+                  <option>Philippines (PHP)</option>
+                  <option>Morocco (MAD)</option>
+                  <option>Vietnam (VND)</option>
+                  <option>Mexico (MXN)</option>
+                </select>
+              </div>
+            </div>
+            <div class="grid-2">
+              <div class="field">
+                <label for="rec-rail">Payout rail</label>
+                <select id="rec-rail">
+                  <option>Bank Deposit</option>
+                  <option>Mobile Wallet</option>
+                  <option>Cash Pickup</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="rec-account">Account / IBAN / Wallet ID</label>
+                <input id="rec-account" placeholder="Account number or wallet phone" required>
+              </div>
+            </div>
+            <button class="btn" type="submit">Save demo recipient</button>
+          </form>
+        </section>
+
+        <section class="dash-section">
+          <h2>Verification &amp; payout tips</h2>
+          <div class="visit-bar">
+            <div class="visit-item">
+              <span class="tag">01 · Name Match</span>
+              <h3>Exact Legal Name</h3>
+              <p style="margin-bottom:0">Ensure the recipient name matches bank records or government ID exactly.</p>
+            </div>
+            <div class="visit-item">
+              <span class="tag">02 · Faster Repeat</span>
+              <h3>Pre-Checked Rails</h3>
+              <p style="margin-bottom:0">Saved IFSC, IBAN, and wallet IDs cut manual entry errors on repeat sends.</p>
+            </div>
+            <div class="visit-item">
+              <span class="tag">03 · Limits</span>
+              <h3>Corridor Thresholds</h3>
+              <p style="margin-bottom:0">Higher payout amounts may prompt additional source-of-funds checks.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- PANEL 4: RECEIPTS & ALERTS (3 Sections) -->
+      <div class="dash-panel" data-dash-panel="alerts" hidden>
+        <div class="dash-head">
+          <span class="eyebrow">Documents &amp; rate watch</span>
+          <h1>Receipts &amp; rate alerts</h1>
+          <p>Preview downloadable demo receipts and manage target exchange rate notifications.</p>
+        </div>
+
+        <section class="dash-section">
+          <h2>Transaction receipts</h2>
+          <div class="panel table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Receipt ID</th>
+                  <th>Transfer Ref</th>
+                  <th>Date</th>
+                  <th>Total Paid</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mono">RCP-2026-1041</td>
+                  <td class="mono">GR-1041</td>
+                  <td>Nov 18, 2026</td>
+                  <td class="mono">£353.90</td>
+                  <td><button class="btn alt" type="button" style="padding:6px 12px" data-receipt-demo="RCP-2026-1041">Download PDF</button></td>
+                </tr>
+                <tr>
+                  <td class="mono">RCP-2026-1036</td>
+                  <td class="mono">GR-1036</td>
+                  <td>Nov 11, 2026</td>
+                  <td class="mono">$1,205.00</td>
+                  <td><button class="btn alt" type="button" style="padding:6px 12px" data-receipt-demo="RCP-2026-1036">Download PDF</button></td>
+                </tr>
+                <tr>
+                  <td class="mono">RCP-2026-1028</td>
+                  <td class="mono">GR-1028</td>
+                  <td>Nov 02, 2026</td>
+                  <td class="mono">€610.00</td>
+                  <td><button class="btn alt" type="button" style="padding:6px 12px" data-receipt-demo="RCP-2026-1028">Download PDF</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <h2>Active rate watch alerts</h2>
+          <div class="grid">
+            <div class="panel">
+              <span class="badge up">Watching</span>
+              <h3 class="mono" style="margin:10px 0 4px">USD / INR</h3>
+              <p style="margin:0">Target: <strong class="mono">84.00</strong> · Current sample: 83.50</p>
+            </div>
+            <div class="panel">
+              <span class="badge up">Watching</span>
+              <h3 class="mono" style="margin:10px 0 4px">GBP / PHP</h3>
+              <p style="margin:0">Target: <strong class="mono">72.00</strong> · Current sample: 71.20</p>
+            </div>
+            <div class="panel">
+              <span class="badge info">Triggered (Demo)</span>
+              <h3 class="mono" style="margin:10px 0 4px">EUR / INR</h3>
+              <p style="margin:0">Target: <strong class="mono">90.00</strong> · Sample reached</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="dash-section">
+          <div class="split">
+            <form class="panel" data-demo data-msg="Demo rate watch alert added.">
+              <h2>Create new rate alert</h2>
+              <div class="field">
+                <label for="dash-alert-pair">Currency pair</label>
+                <select id="dash-alert-pair">
+                  <option>USD / INR</option>
+                  <option>GBP / PHP</option>
+                  <option>EUR / INR</option>
+                  <option>USD / MXN</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="dash-alert-rate">Target exchange rate</label>
+                <input id="dash-alert-rate" type="number" step="0.01" value="84.25" required>
+              </div>
+              <button class="btn" type="submit">Add alert</button>
+            </form>
+
+            <div class="panel" style="display:flex;flex-direction:column;justify-content:space-between;gap:14px">
+              <div>
+                <h2>Notification preferences</h2>
+                <p>Choose how transfer status and target-rate updates are delivered.</p>
+                <div style="display:grid;gap:12px;margin-top:14px">
+                  <label class="auth-check">
+                    <input type="checkbox" checked>
+                    <span>Email receipts &amp; delivery confirmations</span>
+                  </label>
+                  <label class="auth-check">
+                    <input type="checkbox" checked>
+                    <span>Target FX rate threshold alerts</span>
+                  </label>
+                  <label class="auth-check">
+                    <input type="checkbox">
+                    <span>SMS alerts for cash pickup availability</span>
+                  </label>
+                </div>
+              </div>
+              <div class="bento-row">
+                <span>Active delivery channel</span>
+                <strong class="mono" style="color:var(--teal)">Email (Demo)</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

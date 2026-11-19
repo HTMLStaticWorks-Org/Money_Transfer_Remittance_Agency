@@ -14,10 +14,11 @@
       <nav class="links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="home2.html">Home 2</a>
-        <a href="send-money.html">Send Money</a>
+        <a href="about.html">About</a>
+        <a href="send-money.html">Transfer</a>
         <a class="active" aria-current="page" href="rates.html">Rates</a>
         <a href="security.html">Security</a>
-        <a href="locations.html">Track &amp; Locate</a>
+        <a href="track.html">Track</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="tools">
@@ -25,17 +26,28 @@
         <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
         <a class="btn alt" href="login.html">Login</a>
         <a class="btn" href="dashboard.html">Dashboard</a>
-        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
     <nav class="mobile" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="home2.html">Home 2</a>
-      <a href="send-money.html">Send Money</a>
+      <a href="about.html">About</a>
+      <a href="send-money.html">Transfer</a>
       <a class="active" aria-current="page" href="rates.html">Rates</a>
       <a href="security.html">Security</a>
-      <a href="locations.html">Track &amp; Locate</a>
+      <a href="track.html">Track</a>
       <a href="contact.html">Contact</a>
+      <div class="mobile-tools">
+        <div class="mobile-tools-row">
+          <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        </div>
+        <div class="mobile-tools-row">
+          <a class="btn alt" href="login.html">Login</a>
+          <a class="btn" href="dashboard.html">Dashboard</a>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -189,7 +201,7 @@
     </section>
 
     <section class="section">
-      <div class="wrap split" style="align-items:start">
+      <div class="wrap split" style="align-items:stretch">
         <form class="panel" data-demo data-msg="Demo rate watch alert saved.">
           <span class="eyebrow">Rate watch</span>
           <h2>Set a target rate alert.</h2>
@@ -214,11 +226,11 @@
           <button class="btn" type="submit">Create rate alert</button>
         </form>
 
-        <div>
+        <div class="panel" style="display:flex;flex-direction:column">
           <span class="eyebrow">Smart timing</span>
           <h2>Practical FX tips before sending.</h2>
-          <div class="faq" style="margin-top:16px">
-            <details open>
+          <div class="faq" style="margin-top:16px;height:auto;flex:1">
+            <details>
               <summary>Check weekday market hours</summary>
               <p>Global currency markets close over weekends, so some providers widen rate buffers on Saturdays and Sundays.</p>
             </details>
@@ -245,7 +257,8 @@
       <div>
         <h3>Services</h3>
         <p>
-          <a href="send-money.html">Send Money</a><br>
+          <a href="about.html">About</a><br>
+          <a href="send-money.html">Transfer</a><br>
           <a href="rates.html">Rates</a><br>
           <a href="security.html">Security</a>
         </p>
@@ -253,8 +266,8 @@
       <div>
         <h3>Support</h3>
         <p>
-          <a href="locations.html#track">Track</a><br>
-          <a href="locations.html#locations">Locations</a><br>
+          <a href="track.html">Track</a><br>
+          <a href="contact.html#locations">Locations</a><br>
           <a href="contact.html">Contact</a>
         </p>
       </div>

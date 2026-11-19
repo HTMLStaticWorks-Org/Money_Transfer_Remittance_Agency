@@ -41,8 +41,7 @@
     });
   }
 
-  const rawFile = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  const currentFile = rawFile === 'track.html' ? 'locations.html' : rawFile;
+  const currentFile = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   document.querySelectorAll('.links a, .mobile a').forEach(link => {
     const hrefFile = (link.getAttribute('href') || '').split('#')[0].toLowerCase();
     const isActive = hrefFile === currentFile;
@@ -73,10 +72,16 @@
 
   syncControls();
 
+  const burgerIcon =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  const closeIcon =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+
   const mobileMenu = document.querySelector('.mobile');
   document.querySelectorAll('.mobile-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
       const open = mobileMenu?.classList.toggle('open') ?? false;
+      btn.innerHTML = open ? closeIcon : burgerIcon;
       btn.setAttribute('aria-expanded', String(open));
     });
   });
@@ -129,6 +134,30 @@
     btn.addEventListener('click', () => {
       const provider = btn.dataset.social || 'Social';
       showToast(`Demo only: ${provider} sign-in requires OAuth integration.`);
+    });
+  });
+
+  document.querySelectorAll("[data-social-link]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const name = btn.dataset.socialLink || "social";
+      showToast(`Demo social link: connect your official ${name} profile.`);
+    });
+  });
+
+  const eyeIcon =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>';
+  const eyeOffIcon =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-6.5 0-10-7-10-7a21.8 21.8 0 0 1 5.06-5.94"/><path d="M9.9 4.24A10.94 10.94 0 0 1 12 4c6.5 0 10 7 10 7a21.8 21.8 0 0 1-2.16 3.19"/><path d="M1 1l22 22"/></svg>';
+
+  document.querySelectorAll("[data-pass-toggle]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const input = btn.closest(".pass-wrap")?.querySelector("input");
+      if (!input) return;
+      const show = input.type === "password";
+      input.type = show ? "text" : "password";
+      btn.innerHTML = show ? eyeOffIcon : eyeIcon;
+      btn.setAttribute("aria-pressed", String(show));
+      btn.setAttribute("aria-label", show ? "Hide password" : "Show password");
     });
   });
 
@@ -332,4 +361,64 @@
     boxes.forEach(box => box.addEventListener('change', syncChecklist));
     syncChecklist();
   }
+
+  const dashTabs = document.querySelectorAll("[data-dash-tab]");
+  const dashPanels = document.querySelectorAll("[data-dash-panel]");
+  const dashJumps = document.querySelectorAll("[data-dash-jump]");
+
+  function activateDashTab(target) {
+    if (!target) return;
+    dashPanels.forEach((panel) => {
+      panel.hidden = panel.dataset.dashPanel !== target;
+    });
+    dashTabs.forEach((tab) => {
+      const active = tab.dataset.dashTab === target;
+      tab.classList.toggle("active", active);
+      if (active) {
+        tab.setAttribute("aria-current", "page");
+      } else {
+        tab.removeAttribute("aria-current");
+      }
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  if (dashTabs.length && dashPanels.length) {
+    dashTabs.forEach((tab) => {
+      tab.addEventListener("click", () => activateDashTab(tab.dataset.dashTab));
+    });
+    dashJumps.forEach((btn) => {
+      btn.addEventListener("click", () =>
+        activateDashTab(btn.dataset.dashJump),
+      );
+    });
+  }
+
+  const dashFilters = document.querySelectorAll("[data-dash-filter]");
+  const dashRows = document.querySelectorAll("tr[data-status]");
+
+  if (dashFilters.length && dashRows.length) {
+    dashFilters.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const status = btn.dataset.dashFilter || "all";
+        dashFilters.forEach((other) => {
+          const active = other === btn;
+          other.classList.toggle("active", active);
+          other.setAttribute("aria-pressed", String(active));
+        });
+        dashRows.forEach((row) => {
+          row.hidden = status !== "all" && row.dataset.status !== status;
+        });
+      });
+    });
+  }
+
+  document.querySelectorAll("[data-receipt-demo]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.receiptDemo || "RCP";
+      showToast(
+        `Demo receipt ${id} preview only — connect backend for PDF export.`,
+      );
+    });
+  });
 })();

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Track &amp; Locate | Global Remit</title>
+  <title>Track Transfer | Global Remit</title>
   <link rel="icon" type="image/svg+xml" href="logo.svg">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,10 +14,11 @@
       <nav class="links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="home2.html">Home 2</a>
-        <a href="send-money.html">Send Money</a>
+        <a href="about.html">About</a>
+        <a href="send-money.html">Transfer</a>
         <a href="rates.html">Rates</a>
         <a href="security.html">Security</a>
-        <a class="active" aria-current="page" href="locations.html">Track &amp; Locate</a>
+        <a class="active" aria-current="page" href="track.html">Track</a>
         <a href="contact.html">Contact</a>
       </nav>
       <div class="tools">
@@ -25,26 +26,37 @@
         <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
         <a class="btn alt" href="login.html">Login</a>
         <a class="btn" href="dashboard.html">Dashboard</a>
-        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu">Menu</button>
+        <button class="ctrl mobile-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </div>
     <nav class="mobile" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="home2.html">Home 2</a>
-      <a href="send-money.html">Send Money</a>
+        <a href="about.html">About</a>
+      <a href="send-money.html">Transfer</a>
       <a href="rates.html">Rates</a>
       <a href="security.html">Security</a>
-      <a class="active" aria-current="page" href="locations.html">Track &amp; Locate</a>
+      <a class="active" aria-current="page" href="track.html">Track</a>
       <a href="contact.html">Contact</a>
+      <div class="mobile-tools">
+        <div class="mobile-tools-row">
+          <button class="ctrl" type="button" data-theme aria-label="Switch to dark theme" title="Switch to dark theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="ctrl" type="button" data-dir aria-label="Toggle text direction">LTR</button>
+        </div>
+        <div class="mobile-tools-row">
+          <a class="btn alt" href="login.html">Login</a>
+          <a class="btn" href="dashboard.html">Dashboard</a>
+        </div>
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="wrap">
-        <span class="eyebrow">Track &amp; Locate</span>
-        <h1>Track transfers &amp; find locations.</h1>
-        <p>Test a sample reference number to preview milestone stages, or browse regional service hubs below.</p>
+        <span class="eyebrow">Track Transfer</span>
+        <h1>Follow every transfer milestone.</h1>
+        <p>Test a sample reference number to preview live-style status stages, expected delivery windows, and payout steps.</p>
         <div class="chips" role="group" aria-label="Try a sample transfer reference">
           <button class="chip active" type="button" data-sample-ref="GR-1042">GR-1042 · Processing</button>
           <button class="chip" type="button" data-sample-ref="GR-1041">GR-1041 · Delivered</button>
@@ -73,8 +85,8 @@
             <p style="font-weight:700;color:var(--ink);margin:0 0 8px" data-track-route>USD → INR · Bank Deposit</p>
             <p data-track-detail>Payment confirmed. Standard compliance &amp; partner payout check in progress.</p>
             <div class="actions">
-              <a class="btn alt" href="#locations">Browse service hubs</a>
-              <a class="btn alt" href="contact.html">Need help?</a>
+              <a class="btn alt" href="#timelines">View delivery timelines</a>
+              <a class="btn alt" href="contact.html#locations">Find pickup branches</a>
             </div>
           </div>
         </div>
@@ -110,40 +122,43 @@
       </div>
     </section>
 
-    <section class="section" id="locations">
+    <section class="section" id="timelines">
       <div class="wrap">
-        <span class="eyebrow">Service locations</span>
-        <h2>Regional support hubs &amp; map preview.</h2>
-        <p>Sample branch cards and map placeholder; replace with verified agent addresses before launch.</p>
-        <div class="split" style="align-items:start">
-          <div style="display:grid;gap:14px" role="group" aria-label="Select regional hub to preview on map">
-            <button type="button" class="hub-card active" data-map-bbox="72.82,19.04,72.90,19.10" data-map-name="Mumbai — BKC Hub" aria-pressed="true">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
-                <h3 style="margin:0">Mumbai — BKC Hub (Sample)</h3>
-                <span class="tag">Cash Pickup &amp; KYC</span>
-              </div>
-              <p style="margin:8px 0 0">Bandra Kurla Complex, Mumbai · Mon–Sat 09:30–18:30 IST</p>
-            </button>
-            <button type="button" class="hub-card" data-map-bbox="-0.05,51.49,0.01,51.52" data-map-name="London — Canary Wharf" aria-pressed="false">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
-                <h3 style="margin:0">London — Canary Wharf (Sample)</h3>
-                <span class="tag">Business &amp; Support</span>
-              </div>
-              <p style="margin:8px 0 0">Canada Square, London · Mon–Fri 09:00–17:30 GMT</p>
-            </button>
-            <button type="button" class="hub-card" data-map-bbox="-74.01,40.74,-73.95,40.77" data-map-name="New York — Midtown" aria-pressed="false">
-              <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
-                <h3 style="margin:0">New York — Midtown (Sample)</h3>
-                <span class="tag">Customer Care</span>
-              </div>
-              <p style="margin:8px 0 0">Lexington Ave, New York · Mon–Fri 09:00–18:00 EST</p>
-            </button>
-          </div>
-          <div class="panel">
-            <div class="map">
-              <iframe title="Service hub map preview" data-hub-map src="https://www.openstreetmap.org/export/embed.html?bbox=72.82%2C19.04%2C72.90%2C19.10&layer=mapnik"></iframe>
+        <span class="eyebrow">Status &amp; delivery guide</span>
+        <h2>Delivery timelines &amp; status codes explained.</h2>
+        <p>Understand what each status message means and when recipients typically receive funds across payout rails.</p>
+        <div class="compare-rows">
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Instant Wallet / UPI</h3>
+              <small style="color:var(--muted)">Seconds to minutes</small>
             </div>
-            <p style="margin-bottom:0" data-hub-label>Showing preview for Mumbai — BKC Hub (not a verified branch location).</p>
+            <p style="margin:0">Mobile wallet and instant local rails usually settle immediately once compliance checks clear.</p>
+            <span class="badge up">Delivered fastest</span>
+          </div>
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Local Bank Deposit</h3>
+              <small style="color:var(--muted)">Minutes to 1 business day</small>
+            </div>
+            <p style="margin:0">Timing depends on destination clearing hours, bank holidays, and accurate IBAN or IFSC codes.</p>
+            <span class="badge info">Processing / Sent</span>
+          </div>
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Cash Pickup</h3>
+              <small style="color:var(--muted)">Ready after authorization</small>
+            </div>
+            <p style="margin:0">When marked Sent, recipients can collect cash at participating partner branches listed on Contact &amp; Locations.</p>
+            <span class="badge info">MTCN required</span>
+          </div>
+          <div class="compare-row">
+            <div>
+              <h3 style="margin:0">Compliance / Action Needed</h3>
+              <small style="color:var(--muted)">Paused for verification</small>
+            </div>
+            <p style="margin:0">Occasionally additional sender ID or recipient verification is requested before funds can be released.</p>
+            <span class="badge down">Contact support</span>
           </div>
         </div>
       </div>
@@ -151,30 +166,30 @@
 
     <section class="section">
       <div class="wrap">
-        <span class="eyebrow">Visit checklist</span>
-        <h2>What to bring for cash pickup or in-branch help.</h2>
+        <span class="eyebrow">Tracking &amp; pickup checklist</span>
+        <h2>What recipients and senders should check.</h2>
         <div class="visit-bar">
           <div class="visit-item">
-            <span class="tag">01 · Identification</span>
+            <span class="tag">01 · Reference</span>
+            <h3>Verify MTCN Code</h3>
+            <p style="margin-bottom:0">Share the exact transfer reference number privately with your recipient only.</p>
+          </div>
+          <div class="visit-item">
+            <span class="tag">02 · Identification</span>
             <h3>Valid Photo ID</h3>
-            <p style="margin-bottom:0">Bring an unexpired government passport or national ID matching the exact recipient name.</p>
+            <p style="margin-bottom:0">For cash pickup, bring an unexpired passport or national ID matching the sender’s receipt.</p>
           </div>
           <div class="visit-item">
-            <span class="tag">02 · Reference</span>
-            <h3>Transfer Number (MTCN)</h3>
-            <p style="margin-bottom:0">Provide the unique transfer reference code shared directly by the sender.</p>
-          </div>
-          <div class="visit-item">
-            <span class="tag">03 · Availability</span>
-            <h3>Agent Payout Limits</h3>
-            <p style="margin-bottom:0">Confirm local branch cash availability and currency payout rules before traveling.</p>
+            <span class="tag">03 · Cutoff Times</span>
+            <h3>Local Bank Hours</h3>
+            <p style="margin-bottom:0">Weekend and public-holiday bank deposits settle on the next local banking day.</p>
           </div>
         </div>
         <div class="inline-note">
-          <span>Have a question about an active transfer or pickup branch?</span>
+          <span>Looking for regional pickup branch maps or help with a delayed transfer?</span>
           <div class="actions" style="margin-top:0">
-            <a class="btn" href="contact.html">Contact support</a>
-            <a class="btn alt" href="send-money.html">Start new estimate</a>
+            <a class="btn" href="contact.html#locations">View branch locations</a>
+            <a class="btn alt" href="contact.html">Contact support</a>
           </div>
         </div>
       </div>
@@ -190,7 +205,8 @@
       <div>
         <h3>Services</h3>
         <p>
-          <a href="send-money.html">Send Money</a><br>
+          <a href="about.html">About</a><br>
+          <a href="send-money.html">Transfer</a><br>
           <a href="rates.html">Rates</a><br>
           <a href="security.html">Security</a>
         </p>
@@ -198,8 +214,8 @@
       <div>
         <h3>Support</h3>
         <p>
-          <a href="locations.html#track">Track</a><br>
-          <a href="locations.html#locations">Locations</a><br>
+          <a href="track.html">Track</a><br>
+          <a href="contact.html#locations">Locations</a><br>
           <a href="contact.html">Contact</a>
         </p>
       </div>
